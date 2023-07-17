@@ -11,23 +11,26 @@
 
 1. Homepage
 
-![Homepage](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/4abc052f-f97a-4652-ad76-e0e7107f32f2)
+![Homepage](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/00b56026-2d75-410c-8b99-0a25a12a9503)
+
 
 2.Products
 
-![products](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/b515661a-728f-4765-87ca-2b1b685420d1)
+![Products](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/304f932a-bf2d-4620-8400-435b1ee645a4)
 
 3.Locations
 
-![locations](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/6c23075b-8022-4e7d-ba90-d8628d8e074d)
+![Locations](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/16892b63-97a2-42c1-9dce-44416482b44c)
 
 4.Movements
 
-![Movements](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/a9ffaa12-167d-4ccf-be72-88723c7bc937)
+![Movements](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/e3a9ba30-3cea-4148-8a67-0929ad38cc83)
+
 
 5.Report
 
-![Report](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/f25e871b-258a-4eec-b5f2-a96f24abd83b)
+![Report](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/4c27da0e-f936-4404-9fc4-00f364c2ff5c)
+
 
 
 # How to run on the Local Host 
