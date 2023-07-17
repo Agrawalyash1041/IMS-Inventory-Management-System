@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Report {% endblock %}
+{% block body %}
+
+<div class="container">
+    <h1 class="text-center mt-2" style="text-align: center; padding-bottom: 3vw" >
+        Report
+    </h1>
+    <table class="table">
+        <thead>
+            <th>Location</th>
+            <th>Product</th>
+            <th>Quantity</th>
+        </thead>
+        {% for row in report %}
+        <tr>
+            <td>{{row.location}}</td>
+            <td>{{row.product}}</td>
+            <td>{{row.quantity}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</div>
+
+{% endblock %}

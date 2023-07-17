@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+
+{% block title %} Locations {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="text-center mt-3">
+        Locations
+    </h2>
+    <form action="/locations" method="post">
+        <div class="form-group">
+            <label for="location-name">
+                Location Name
+            </label>
+            <input type="text" class="form-control" name="location-name" id="location-name">
+            <input type="submit" class="btn btn-outline-dark col-15 h1" value="Add location">
+        </div>
+    </form>
+    {%if locations|length < 1%}
+    <h4>No locations found please start by adding locations above</h4>
+    {% else %}
+    <table class="table">
+        <thead class="thead thead-light">
+            <th>
+                ID
+            </th>
+            <th>
+                NAME
+            </th>
+            <th>
+                ACTIONS
+            </th>
+        </thead>
+        {% for location in locations %}
+        <tr>
+            <td>{{location.id}}</td>
+            <td>{{location.name}}</td>
+            <td>
+                <a href="/locations/{{ location.id }}/update" class="btn btn-info">Update</a>
+                <form action="/locations/{{ location.id }}/delete" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this location?')">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</div>
+{% endblock %}
