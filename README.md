@@ -44,8 +44,7 @@
 
    b) Open the app.py and paste the generated secret key in the app.config 'secret_key' line.
 
- 3) DB creation :- The Db will be automatically created once you run the app.py using the given instructions and one can locate their db in the instance folder(which also be added once the app.py is run correctly). 
-
+ 3) DB creation :- The Db will be automatically created in the instance folder once you run the app.py using the given instructions.
 
 
 # How to run on the Local Host 
