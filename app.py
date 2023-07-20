@@ -142,34 +142,50 @@ def movements():
         from_location = request.form['from-location']
         product = request.form['product']
         quantity = request.form['quantity']
+
         if from_location == 'none':
             new_movement = Movement(to_location_id=to_location, from_location_id=None, product_id=product, quantity=quantity)
         else:
-            quantity_at_location = get_quantity(from_location, product)
-            if quantity_at_location < int(quantity):
+            quantity_at_from_location = get_quantity(from_location, product)
+            if quantity_at_from_location < int(quantity):
                 return "Not enough quantity is available"
             new_movement = Movement(to_location_id=to_location, from_location_id=from_location, product_id=product, quantity=quantity)
+
         try:
             db.session.add(new_movement)
             db.session.commit()
             return redirect('/movements')
-        except Exception as e:
+        except SQLAlchemyError as e:
+            db.session.rollback()
             return "Database error: " + str(e)
 
-@app.route('/movements/<int:id>/update',methods=["GET","POST"])
+@app.route('/movements/<int:id>/update', methods=["GET", "POST"])
 def update_movements(id):
     movement_to_be_updated = Movement.query.get_or_404(id)
     if request.method == "GET":
         products = Product.query.all()
         locations = Location.query.all()
         movements = Movement.query.all()
-        return render_template('update_movements.html',products=products,locations=locations,movement=movement_to_be_updated)
+
+        # Filter out the 'none' location option for 'to-location' dropdown if 'from-location' is 'none'
+        if movement_to_be_updated.from_location_id == None:
+            filtered_locations = [(loc.id, loc.name) for loc in locations if loc.id != None]
+        else:
+            filtered_locations = [(loc.id, loc.name) for loc in locations]
+
+        return render_template('update_movements.html', products=products, locations=filtered_locations, movement=movement_to_be_updated)
     if request.method == "POST":
-        movement_to_be_updated.to_location_id = request.form["to_location"]
-        movement_to_be_updated.from_location_id = request.form["from_location"]
+        movement_to_be_updated.to_location_id = request.form["to-location"]
+        movement_to_be_updated.from_location_id = request.form["from-location"]
         movement_to_be_updated.product_id = request.form["product"]
-        movement_to_be_updated.quantity = request.form["quantity"] 
-        pass
+        movement_to_be_updated.quantity = request.form["quantity"]
+
+        try:
+            db.session.commit()
+            return redirect('/movements')
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            return "Database error: " + str(e)
 
 @app.route('/movements/<int:id>/delete', methods=["POST"])
 def delete_movement(id):
