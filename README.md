@@ -32,6 +32,18 @@
 ![Report](https://github.com/Agrawalyash1041/IMS-Inventory-Management-System/assets/111517167/4c27da0e-f936-4404-9fc4-00f364c2ff5c)
 
 
+# Config of the Database
+
+1) Secret Key :- Steps to get your own secret key
+   a) Open the python terminal and paste the following code and hit enter
+       import secrets
+       secrets.token_hex(10)
+
+   b) Open the app.py and paste the generated secret key in the app.config 'secret_key' line.
+
+ 2) DB creation :- The Db will be automatically created once you run the app.py using the given instructions and one can locate their db in the instance folder(which also be added once the app.py is run correctly. 
+
+
 
 # How to run on the Local Host 
 
