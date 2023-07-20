@@ -35,13 +35,16 @@
 # Config of the Database
 
 1) Secret Key :- Steps to get your own secret key
+   
    a) Open the python terminal and paste the following code and hit enter
+   
        import secrets
+   
        secrets.token_hex(10)
 
    b) Open the app.py and paste the generated secret key in the app.config 'secret_key' line.
 
- 2) DB creation :- The Db will be automatically created once you run the app.py using the given instructions and one can locate their db in the instance folder(which also be added once the app.py is run correctly. 
+ 3) DB creation :- The Db will be automatically created once you run the app.py using the given instructions and one can locate their db in the instance folder(which also be added once the app.py is run correctly). 
 
 
 
@@ -49,7 +52,8 @@
 
 To run the app on the local host 
 1) Activate the Virtual environment 
-2) To activate the virtual environment for the project, run the following code in terminal in Vs Code :       
+2) To activate the virtual environment for the project, run the following code in terminal in Vs Code :
+   
          ./env/scripts/activate.ps1 
 4) Then Run the App
 5) If Errors Encountered open the terminal again and pip install all required libraries from the requirements.txt
